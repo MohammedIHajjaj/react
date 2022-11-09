@@ -1,12 +1,14 @@
+import Card from "./Card";
 import ExpenseItem from "./ExpenseItem";
+import "./Expenses.css";
 
-const Expenses = ({expenses}) => {
+const Expenses = ({ expenses }) => {
   return (
-    <div>
+    <Card className="expenses">
       {expenses.map((item) => (
         <ExpenseItem item={item} />
       ))}
-    </div>
+    </Card>
   );
 };
 
