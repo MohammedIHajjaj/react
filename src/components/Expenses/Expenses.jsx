@@ -5,7 +5,7 @@ import "./Expenses.css";
 import { useState } from "react";
 
 const Expenses = ({ expenses }) => {
-  const [expenseFilterYear, setExpenseFilterYear] = useState("");
+  const [expenseFilterYear, setExpenseFilterYear] = useState("2022");
 
   const filterYearHandler = (year) => {
     setExpenseFilterYear(year);
@@ -14,7 +14,10 @@ const Expenses = ({ expenses }) => {
 
   return (
     <Card className="expenses">
-      <ExpenseFilter onFilteredYear={filterYearHandler} />
+      <ExpenseFilter
+        expenseFilterYear={expenseFilterYear}
+        onFilteredYear={filterYearHandler}
+      />
       {expenses.map((item) => (
         <ExpenseItem item={item} />
       ))}
