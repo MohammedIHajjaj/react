@@ -5,7 +5,7 @@ import "./NewExpense.css";
 const NewExpense = ({ onAddHandler }) => {
   const [addNewExpense, setAddNewExpense] = useState(false);
 
-  const onCancelHandler = () => {
+  const cancelHandler = () => {
     setAddNewExpense(false);
   };
   
@@ -17,7 +17,7 @@ const NewExpense = ({ onAddHandler }) => {
       ) : (
         <ExpenseForm
           onAddHandler={onAddHandler}
-          onCancelHandler={onCancelHandler}
+          onCancelHandler={cancelHandler}
         />
       )}
     </div>
