@@ -43,7 +43,7 @@ const ExpenseForm = (props) => {
     const expenseData = {
       id: parseInt(Math.random() * 1000),
       title: itemTitle,
-      amount: itemAmount,
+      amount: +itemAmount,
       date: new Date(itemDate),
     };
 
