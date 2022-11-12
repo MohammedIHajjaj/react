@@ -41,6 +41,7 @@ const ExpenseForm = (props) => {
     event.preventDefault();
 
     const expenseData = {
+      id: parseInt(Math.random() * 1000),
       title: itemTitle,
       amount: itemAmount,
       date: new Date(itemDate),
@@ -51,6 +52,8 @@ const ExpenseForm = (props) => {
     setItemTitle("");
     setItemAmount("");
     setItemDate("");
+
+    props.onCancelHandler();
   };
 
   return (
@@ -82,6 +85,7 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button onClick={props.onCancelHandler}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
